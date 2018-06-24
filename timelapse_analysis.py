@@ -89,7 +89,7 @@ def analyze_image(img_folder, crop_area=[0, 1000, 650, 1100], min_area=30000):
         current_sizes = abs(img_binary.shape[0] - df['Height'])
         df['Height Normalized'] = (current_sizes - start_size) / start_size
         print(start_size, img_binary.shape[0])
-        # df.to_json(export_name, orient='columns')
+        df.to_json(export_name, orient='columns')
         
     else:
         df = pd.read_json(export_name, orient='columns')
